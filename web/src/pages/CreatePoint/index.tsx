@@ -118,7 +118,7 @@ const CreatePoint = ()=>{
   }
   return (
     <div id="page-create-point">
-      { showAlert ? <Alert /> : "" }
+      { showAlert && <Alert /> }
 
       <header>
         <img src={logo} alt="Ecoleta"/>

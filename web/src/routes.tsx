@@ -10,7 +10,6 @@ const Routes = () =>{
     <BrowserRouter>
       <Route component={Home} path='/' exact />
       <Route component={CreatePoint} path='/create-point' />
-      <Route component={Alert} path='/alert'/>
     </BrowserRouter>  
   )
 }
