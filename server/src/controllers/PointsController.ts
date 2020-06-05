@@ -3,7 +3,6 @@ import knex from '../database/Connection';
 
 class PointsController {
   async index(request: Request, response: Response){
-    //cidade, uf, items
     const { city, uf, items } = request.query;
 
     const parsedItems = String(items).split(',').map(item => Number(item.trim()))
@@ -15,7 +14,9 @@ class PointsController {
       .distinct()
       .select('points.*')
 
-    return response.json(points)
+    const serializedPoints = points.map(point => ({ ...point, image: `http:///192.168.0.101:3333/uploads/${point.image}`}))
+
+    return response.json(serializedPoints)
   }
 
   async show(request: Request, response: Response){
@@ -30,22 +31,21 @@ class PointsController {
 
     items = items.map(item => ({ ...item, image: `http:///192.168.0.101:3333/uploads/${item.image}`}))
     
-    return response.json({ ...point, items})
+    return response.json({ ...point, items, image: `http:///192.168.0.101:3333/uploads/${point.image}`})
   }
 
   async create(request: Request, response: Response) {
     const { name, email, whatsapp, latitude, longitude, city, uf, items } = request.body;
-    const point = { 
-      name, email, whatsapp, latitude, longitude, city, uf,
-      image: 'https://images.unsplash.com/photo-1572202808998-93788f6d39da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80'
-    };
+    const point = { name, email, whatsapp, latitude, longitude, city, uf, image: request.file.filename };
     
     const trx = await knex.transaction();
     const insertedIds = await trx('points').insert(point)
     const point_id = insertedIds[0];
     
-    const pointItems = items.map((item_id: number) => {
-      return { point_id: point_id, item_id }
+    const pointItems = items
+        .split(',')
+        .map((item:string) => Number(item.trim()))
+        .map((item_id: number) => { return { point_id: point_id, item_id }
     })
     
     await trx('points_items').insert(pointItems)
