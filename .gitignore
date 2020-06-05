@@ -1,6 +1,6 @@
 server/package-lock.json
 server/node_modules
+server/uploads/*
 web/node_modules
-server/src/database/database.sqlite
 *.sqlite
-*.jpg
+
