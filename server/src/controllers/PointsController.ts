@@ -24,11 +24,13 @@ class PointsController {
 
     if(!point) return response.status(400).json({message: 'Point Not Found'});
 
-    const items = await knex('items')
+    let items = await knex('items')
       .join('points_items', 'items.id', '=', 'points_items.item_id')
       .where('points_items.point_id', id);
 
-    return response.json({...point, items})
+    items = items.map(item => ({ ...item, image: `http:///192.168.0.101:3333/uploads/${item.image}`}))
+    
+    return response.json({ ...point, items})
   }
 
   async create(request: Request, response: Response) {
