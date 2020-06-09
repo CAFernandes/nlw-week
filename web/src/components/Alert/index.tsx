@@ -10,5 +10,5 @@ const Alert = () => {
       <h1>Cadastro Concluído!</h1>
     </div>
   )
-} 
+}
 export default Alert;

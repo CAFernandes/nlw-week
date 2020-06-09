@@ -11,6 +11,7 @@
     "@types/react-leaflet": "^2.5.1",
     "@types/react-router-dom": "^5.1.5",
     "axios": "^0.19.2",
+    "leaflet": "^1.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-dropzone": "^11.0.1",
@@ -21,7 +22,7 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start --transpireOnly --ignore-watch node_modules",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

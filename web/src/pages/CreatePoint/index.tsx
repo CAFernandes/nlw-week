@@ -3,15 +3,13 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet';
-
-import Alert from '../../components/Alert';
-
 import axios from 'axios';
 
 import './styles.css';
-import logo from '../../assets/logo.svg';
 import api from '../../services/api';
-import Dropzone from '../../components/Dropzone'
+import logo from '../../assets/logo.svg';
+import Alert from '../../components/Alert';
+import Dropzone from '../../components/Dropzone';
 
 //ao criar um estado para array é necessário informar manualmente o tipo da várivel
 
@@ -36,13 +34,13 @@ const CreatePoint = ()=>{
   const [cities, setCities] = useState<City[]>([]);
   const [showAlert, setShowAlert] = useState<boolean>(false);
   const [inputData, setInputData] = useState({  name: '', email: '', whatsapp: '' });
-  
+
   const [selectedUf, setSelectedUf] = useState('0');
   const [selectedCity, setSelectedCity] = useState('0');
-  const [selectedItems, setSelectedItems   ] = useState<number[]>([]);
+  const [selectedFile, setSelectedFile] = useState<File>()
+  const [selectedItems, setSelectedItems] = useState<number[]>([]);
   const [initialPosition, setInitialPosition] = useState<[number, number]>([0, 0]);
   const [selectedPosition, setSelectedPosition] = useState<[number, number]>([0, 0]);
-  const [selectedFile, setSelectedFile] = useState<File>()
 
   const history = useHistory();
 
@@ -67,7 +65,7 @@ const CreatePoint = ()=>{
         .then(response => { setCities(response.data) })
         .catch(err => { console.error(err) })
     } else {
-      cities.slice(0, cities.length-1)
+      setCities([])
     }
   }, [selectedUf])
 
@@ -101,12 +99,12 @@ const CreatePoint = ()=>{
     event.preventDefault();
 
 
-    if (selectedFile == undefined) {
+    if (selectedFile === undefined) {
       alert('É necessário enviar uma imagem do estabelecimento')
       return;
     }
 
-    if (selectedItems.length == 0){
+    if (selectedItems.length === 0){
       alert('É necessário escolher os itens de coleta do estabelecimento')
       return;
     }
@@ -132,7 +130,7 @@ const CreatePoint = ()=>{
 
     setShowAlert(true)
 
-    setTimeout(() => { history.push('/')}, 3000);
+    setTimeout(() => { history.push('/') }, 3000);
   }
   return (
     <div id="page-create-point">
@@ -140,7 +138,7 @@ const CreatePoint = ()=>{
 
       <header>
         <img src={logo} alt="Ecoleta"/>
-        <Link to='/'>
+          <Link to='/'>
           <FiArrowLeft/>
           <p>Voltar para a Home</p>
         </Link>
@@ -207,7 +205,7 @@ const CreatePoint = ()=>{
           </legend>
           <ul className="items-grid">
             {items.map(item => (
-              <li 
+              <li
                 key={item.id}
                 className={selectedItems.includes(item.id) ? 'selected': ''}
                 onClick={()=> handleSeletedItem(item.id)}>
