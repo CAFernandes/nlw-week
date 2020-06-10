@@ -51,14 +51,12 @@ const CreatePoint = ()=>{
       })
       .catch(err=>{console.log(err)})
   }, [])
-
   useEffect(()=>{
     axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome')
       .then(response => {
         setUfs(response.data)
       })
   }, [])
-
   useEffect(()=>{
     if(selectedUf !== '0'){
       axios.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUf}/municipios?orderBy=nome`)
@@ -68,7 +66,6 @@ const CreatePoint = ()=>{
       setCities([])
     }
   }, [selectedUf])
-
   useEffect(()=>{
     navigator.geolocation.getCurrentPosition(position => {
       let { latitude, longitude } = position.coords;
@@ -98,8 +95,16 @@ const CreatePoint = ()=>{
   async function handleOnSubmit(event: FormEvent){
     event.preventDefault();
 
+<<<<<<< Updated upstream
 
+<<<<<<< Updated upstream
     if (selectedFile === undefined) {
+=======
+    if (selectedFile == undefined) {
+=======
+    if (selectedFile === undefined) {
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
       alert('É necessário enviar uma imagem do estabelecimento')
       return;
     }
