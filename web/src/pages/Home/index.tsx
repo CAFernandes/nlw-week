@@ -17,19 +17,11 @@ interface City {
 }
 
 const Home = () => {
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
   const [ufs, setUfs] = useState<UF[]>([]);
   const [cities, setCities] = useState<City[]>([]);
   const [selectedUf, setSelectedUf] = useState('0');
   const [selectedCity, setSelectedCity] = useState('0');
-<<<<<<< Updated upstream
-=======
   const [redirectPage, setRedirectPage] = useState(false);
->>>>>>> Stashed changes
   const [showForm, setShowForm] = useState<boolean>(false);
 
   useEffect(() => {
@@ -60,31 +52,15 @@ const Home = () => {
   }
   function handleOnSubmit(event: FormEvent) {
     event.preventDefault();
-<<<<<<< Updated upstream
-    if (selectedUf === '0'){
-      alert('Ops! É necessário escolher um estado para continuar');
-      return;
-    }
-    if(selectedCity === '0'){
-=======
     if (selectedUf === '0') {
       alert('Ops! É necessário escolher um estado para continuar');
       return;
     }
     if (selectedCity === '0') {
->>>>>>> Stashed changes
       alert('Ops! É necessário escolher uma cidade para continuar');
       return;
     }
 
-<<<<<<< Updated upstream
-    <Redirect
-      to={`/search-point?uf=${selectedUf}&city=${selectedCity}`}
-    />
-
-  }
-
-=======
     setRedirectPage(true);
 
   }
@@ -95,8 +71,6 @@ const Home = () => {
     )
   }
 
->>>>>>> Stashed changes
->>>>>>> Stashed changes
   return (
     <div id="page-home">
       <div className="content">
@@ -110,13 +84,6 @@ const Home = () => {
           </div>
         </header>
         <main>
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-           <h1>Seu marketplace de coleta de resídiuos.</h1>
-           <p>Ajudamos pessoas a encotrarem pontos de coletas de forma eficiente.</p>
-=======
->>>>>>> Stashed changes
           <h1>Seu marketplace de coleta de resídiuos.</h1>
           <p>Ajudamos pessoas a encotrarem pontos de coletas de forma eficiente.</p>
 
@@ -126,12 +93,8 @@ const Home = () => {
           </button>
 
           {showForm && (
-<<<<<<< Updated upstream
-            <div className="form-container" >
-=======
             <div className="form-container">
               <div className="background-container" onClick={handleSearchPoint}></div>
->>>>>>> Stashed changes
               <form onSubmit={handleOnSubmit}>
                 <h2>Pontos de coleta</h2>
                 <div className="field">
@@ -154,10 +117,6 @@ const Home = () => {
               </form>
             </div>
           )}
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 
         </main>
       </div>

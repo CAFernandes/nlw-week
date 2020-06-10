@@ -1,13 +1,3 @@
-<<<<<<< Updated upstream
-import React from 'react';
-
-
-
-const SearchPoint = () => {
-  return (
-    <div id='page-search'>
-      <h2>Encontre o seu ponto de coleta</h2>
-=======
 import React, { useState, useEffect } from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Link, RouteComponentProps } from 'react-router-dom';
@@ -81,7 +71,6 @@ const SearchPoint = (props: RouteComponentProps) => {
           ))}
         </main>
       </div>
->>>>>>> Stashed changes
     </div>
   )
 }

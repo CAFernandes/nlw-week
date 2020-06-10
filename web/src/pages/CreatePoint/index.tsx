@@ -95,16 +95,7 @@ const CreatePoint = ()=>{
   async function handleOnSubmit(event: FormEvent){
     event.preventDefault();
 
-<<<<<<< Updated upstream
-
-<<<<<<< Updated upstream
     if (selectedFile === undefined) {
-=======
-    if (selectedFile == undefined) {
-=======
-    if (selectedFile === undefined) {
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       alert('É necessário enviar uma imagem do estabelecimento')
       return;
     }
@@ -143,7 +134,7 @@ const CreatePoint = ()=>{
 
       <header>
         <img src={logo} alt="Ecoleta"/>
-          <Link to='/'>
+        <Link to='/'>
           <FiArrowLeft/>
           <p>Voltar para a Home</p>
         </Link>
@@ -181,7 +172,16 @@ const CreatePoint = ()=>{
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
             <Marker position={selectedPosition}/>
           </Map>
-
+          <div className="field-group">
+            <div className='field'>
+              <label htmlFor="name">Endereço</label>
+              <input type="text" name="name" id="name" onChange={()=>{}} required />
+            </div>
+            <div className='field'>
+              <label htmlFor="name">Número</label>
+              <input type="text" name="name" id="name" onChange={()=>{}} required />
+            </div>
+          </div>
           <div className="field-group">
             <div className="field">
               <label htmlFor="uf">Estado (UF)</label>

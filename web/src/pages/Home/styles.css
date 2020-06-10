@@ -1,14 +1,6 @@
 #page-home {
   height: 100vh;
-<<<<<<< Updated upstream
-  background: url('../../assets/home-background.svg') space 600px bottom;
-=======
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
   background: url('../../assets/home-background.svg') no-repeat 600px bottom;
->>>>>>> Stashed changes
 }
 #page-home .content {
   width: 100%;
@@ -22,35 +14,11 @@
 }
 #page-home .content header {
   margin: 48px 0 0;
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
   width: 70%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-<<<<<<< Updated upstream
-}
-
-#page-home .content header a{
-  color: var(--title-color);
-  font-weight: bold;
-  text-decoration: none;
-
-  display: flex;
-  flex: 1;
-  align-items: center;
-}
-
-#page-home .content header a svg {
-  flex: 1;
-  margin-right: 16px;
-  color: var(--primary-color);
-=======
->>>>>>> Stashed changes
 }
 #page-home .content header a{
   color: var(--title-color);
@@ -65,7 +33,6 @@
   flex: 1;
   margin-right: 16px;
   color: var(--primary-color);
->>>>>>> Stashed changes
 }
 #page-home .content main {
   flex: 1;
@@ -85,16 +52,7 @@
   margin-top: 24px;
   line-height: 38px;
 }
-<<<<<<< Updated upstream
-
-<<<<<<< Updated upstream
 #page-home .content main button {
-=======
-#page-home .content main a {
-=======
-#page-home .content main button {
->>>>>>> Stashed changes
->>>>>>> Stashed changes
   width: 100%;
   max-width: 360px;
   height: 72px;
@@ -107,23 +65,6 @@
   align-items: center;
   overflow: hidden;
 
-<<<<<<< Updated upstream
-  margin: 40px auto auto auto;
-}
-
-#page-home .content main button:focus {
-  outline: var(--primary-color) 1px;
-  border-style: inset;
-}
-
-#page-home .content main button span {
-=======
-<<<<<<< Updated upstream
-  margin-top: 40px;
-}
-
-#page-home .content main a span {
-=======
   margin: 40px auto auto auto;
 }
 #page-home .content main button:focus {
@@ -131,8 +72,6 @@
   border-style: inset;
 }
 #page-home .content main button span {
->>>>>>> Stashed changes
->>>>>>> Stashed changes
   display: block;
   background: rgba(0, 0, 0, 0.08);
   width: 72px;
@@ -143,40 +82,16 @@
   justify-content: center;
   transition: background-color 0.2s;
 }
-<<<<<<< Updated upstream
-
-<<<<<<< Updated upstream
 #page-home .content main button span svg {
-=======
-#page-home .content main a span svg {
-=======
-#page-home .content main button span svg {
->>>>>>> Stashed changes
->>>>>>> Stashed changes
   color: #FFF;
   width: 20px;
   height: 20px;
 }
-<<<<<<< Updated upstream
-
-<<<<<<< Updated upstream
 #page-home .content main button strong {
-=======
-#page-home .content main a strong {
-=======
-#page-home .content main button strong {
->>>>>>> Stashed changes
->>>>>>> Stashed changes
   flex: 1;
   text-align: center;
   color: #FFF;
 }
-<<<<<<< Updated upstream
-
-#page-home .content main button:hover {
-  background: #2FB86E;
-}
-=======
 #page-home .content main button:hover {
   background: #2FB86E;
 }
@@ -239,64 +154,6 @@
   height: 48px;
   margin: 8px auto;
 }
->>>>>>> Stashed changes
-
-#page-home .content main .form-container{
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0,0,0,0.85);
-  position: fixed;
-  z-index: 9999;
-
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-#page-home .content main .field {
-  width: 100%;
-  min-width: 360px;
-  max-width: 560px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-#page-home .content main .form-container select{
-  width: 100%;
-  max-width: 560px;
-  height: 48px;
-  margin: 2px auto;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: #F0F0F5;
-  border-radius: 8px;
-  border: 0;
-  padding: 16px 24px;
-  font-size: 16px;
-  color: #6C6C80;
-
-  flex: 1;
-}
-
-#page-home .content main .form-container h2{
-  width: 100%;
-  max-width: 560px;
-  flex: 1;
-  color: #F0F0F5;
-}
-
-#page-home .content main .form-container button{
-  max-width: 560px;
-  height: 64px;
-  margin: 2px auto;
-}
-
 
 @media(max-width: 900px) {
   #page-home .content {

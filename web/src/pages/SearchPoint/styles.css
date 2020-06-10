@@ -52,7 +52,7 @@
 #page-search .content main {
   height: 70vh;
   flex: 1;
-  background-color: #FFFFFF;
+  background-color: #F0F0F5;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -60,24 +60,25 @@
 #page-search .content main .card-point{
   height: 70vh;
   width: 100%;
+  min-width: 240px;
   max-width: 320px;
   margin: 0 24px 0 24px;
   top: -48px;
   border-radius: 8px;
-  padding: 8px;
   position: relative;
   background-color: #FFF;
-  box-shadow: 1px 0 4px rgba(0, 0, 0, 0.45);
+  /* box-shadow: 1px 0 4px rgba(0, 0, 0, 0.45); */
 }
 #page-search .content main .card-point .card-img {
-  height: 80%;
+  height: 70%;
 }
 #page-search .content main .card-point .card-img img {
   width: 100%;
   height: 95%;
-  border-radius: 8px;
+  border-radius: 8px 8px 0 0;
 }
 #page-search .content main .card-point .card-content {
+  padding: 16px;
   height: 20%;
   display: flex;
   flex-direction: column;
